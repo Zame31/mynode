@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-var port = process.env.PORT ||3131;
+
 //router
 app.get('/',sifut.user);
 app.get('/admin',sifut.admin);
@@ -45,9 +45,13 @@ app.get('/sifut/lapang/hapus/:id',sifut.hapus);
 app.use(express.static(__dirname + '/assets'));
 
 //server
+var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
-app.listen(port);
-console.log('Server Run on  : ' + port);
+
+app.listen(port,ip function(){
+  console.log('Server Run on  : ' + port);
+});
 
 //eror 404 page not found
 app.use(function(req,res,fn){
