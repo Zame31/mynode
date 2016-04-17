@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>admin</title>
+</head>
+<body>
+<h2><%=page_title%></h2>
+  <table>
+    <tr>
+      <td>no</td>
+      <td>id lapang</td>
+      <td>nama</td>
+      <td>aktif</td>
+    </tr>
+
+    <%
+       for(var i = 0;i < data.length;i++) { %>
+
+     <tr>
+        <td><%=(i+1)%></td>
+        <td><%=data[i].id_lapang%></td>
+        <td><%=data[i].nama%></td>
+        <td><%=data[i].aktif%></td>
+    </tr>
+    <% } %>
+
+
+  </table>
+</body>
+</html>

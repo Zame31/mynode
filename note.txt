@@ -1,0 +1,6 @@
+# Finish
+  - Connect ke database
+  - Handle Error 404,500
+  - Halaman Admin Lapang (CRUD)
+
+# Todo
